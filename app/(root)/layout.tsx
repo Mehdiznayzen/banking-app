@@ -1,9 +1,15 @@
+import MobileNav from "@/components/MobileNav"
+import Sidebar from "@/components/Sidebar"
 import Image from "next/image"
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
+    const loggedIn = { firstName: "Mehdi" }
+
     return (
         <main className="flex h-screen w-full font-inter">
-            Sidebar
+            <Sidebar 
+                user={loggedIn} 
+            />
 
             <div className="flex size-full flex-col">
                 <div className="root-layout">
@@ -14,7 +20,9 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
                         alt="logo" 
                     />
                     <div>
-                        MobileNav
+                        <MobileNav 
+                            user={loggedIn}
+                        />
                     </div>
                 </div>
                 {children}
